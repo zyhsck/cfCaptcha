@@ -53,8 +53,8 @@ window.onload = function() {
 
     // 配置项
     const config = {
-        captchaUrl: 'https://translate.yhswz.eu.org/proxy?url=https://yzm.1417402449.workers.dev/captcha',  // 获取验证码的 API
-        verifyUrl: 'https://translate.yhswz.eu.org/proxy?url=https://yzm.1417402449.workers.dev/verify', // 验证的 API
+        captchaUrl: 'https://yourworkersurl.workers.dev/captcha',  // 获取验证码的 API
+        verifyUrl: 'https://yourworkersurl.workers.dev/verify', // 验证的 API
         successCallback: handleSuccess, // 验证成功后的回调函数
         failureCallback: handleFailure, // 验证失败后的回调函数
     };
@@ -64,20 +64,7 @@ function _0x472b(){const _0x4d45ef=['410092qzMSRY','验证失败，重置滑块�
 // 验证成功后的处理
 function handleSuccess() {
     alert('验证通过');
-    const sliderBlock = document.getElementById('sliderBlock');
-    sliderBlock.style.left = '0px';
-    document.getElementById('vcomment').style.display = 'block';
-    document.getElementById('captcha_tips').style.display = 'none';
-    document.getElementById('captcha').style.display = 'none';
-
-    new Valine({
-        el: '#vcomment',
-        appId: 'mGQqXQrRVZmob8DKm7RIKEp7-MdYXbMMI',
-        appKey: 'jAkrUC0ElQmq8wI34grFDYBJ',
-        avatar: 'monsterid',
-        serverURLs: 'https://mgqqxqrr.api.lncldglobal.com',
-        placeholder: "评论可以一针见血..."
-    });
+    
 }
 
 // 验证失败后的处理
@@ -85,7 +72,5 @@ function handleFailure() {
     alert('验证失败，请重试');
     const sliderBlock = document.getElementById('sliderBlock');
     sliderBlock.style.left = '0px'; // 重置滑块位置
-    document.getElementById('captcha_tips').style.display = 'block';
-    document.getElementById('captcha').style.display = 'block';
 }
 }
